@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_char - function that print a char
  * @args: A va_list pointing to the character to be printed.
