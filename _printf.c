@@ -48,8 +48,7 @@ int print_percent(va_list args)
 	return (1);
 }
  /**
- * _printf - function that prints ...
- * Description:
+ * _printf - function that produces output according to a format.
  * @format: A string of characters representing the argument types.
  */
 
