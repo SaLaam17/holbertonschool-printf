@@ -12,6 +12,7 @@
 int print_char(va_list args)
 {
 	char letter = va_arg(args, int);
+
 	_putchar(letter);
 	return (1);
 }
@@ -20,7 +21,6 @@ int print_char(va_list args)
  * print_string - function that print a string
  * @args: A va_list pointing to the string to be printed.
  * Return: the number of characters printed
- * (excluding the null byte used to end output to strings)
 */
 
 
@@ -28,8 +28,8 @@ int print_string(va_list args)
 {
 	int i;
 	char *str = va_arg(args, char *);
-	if (str == NULL)
 
+	if (str == NULL)
 	{
 		str = "(NULL)";
 	}
@@ -41,6 +41,13 @@ int print_string(va_list args)
 	}
 	return (i);
 }
+
+/**
+ * print_percent - function that print a percent symbol
+ * @args: A va_list pointing to the string to be printed.
+ * Return: 1
+*/
+
 int print_percent(va_list args)
 {
 	(void)args;
@@ -49,7 +56,9 @@ int print_percent(va_list args)
 }
  /**
  * _printf - function that produces output according to a format.
+ * Description: function that produces output according to a format.
  * @format: A string of characters representing the argument types.
+ * Return: The number of characters printed.
  */
 
 int _printf(const char *format, ...)
@@ -65,12 +74,13 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-    while (format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			j = 0;
+
 			while (array[j].letter != '\0')
 			{
 				if (format[i] == array[j].letter)
@@ -87,8 +97,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	
+
 	va_end(args);
 	return (1);
 }
-

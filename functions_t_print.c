@@ -8,21 +8,24 @@
 
 int print_char(va_list args)
 {
-	char letter = va_arg(args, int); 
-	_putchar(letter); 
+	char letter = va_arg(args, int);
+
+	_putchar(letter);
 	return (1);
 }
 
 /**
  * print_string - function that print a string
  * @args: A va_list pointing to the string to be printed.
+ * Return: length of the string
 */
 
 
-int print_string(va_list args) 
+int print_string(va_list args)
 {
 	int i;
-	char *str = va_arg(args, char *); 
+	char *str = va_arg(args, char *);
+
 	if (str == NULL)
 	{
 		str = "(NULL)";
@@ -33,11 +36,18 @@ int print_string(va_list args)
 		_putchar(str[i]);
 		i++;
 	}
-	return(i);
+	return (i);
 }
+
+/**
+ * print_percent - function that print a percent sign
+ * @args: A va_list pointing to the string to be printed.
+ * Return: 1
+ */
+
 int print_percent(va_list args)
 {
 	(void)args;
 	_putchar('%');
-	return(1);
+	return (1);
 }

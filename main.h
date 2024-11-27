@@ -27,12 +27,15 @@ int _putchar(char c)
 
 /**
  * struct type_format - new struct type
- * @letter:
- * @function_pointer:
+ * @letter: a char representing a data type.
+ * @function_pointer: function pointer to a function that prints
+ * a data type corresponding to letter.
  */
-typedef struct type_format {
-    char letter;
-    int (*function_pointer)(va_list args);
-}format_t;
+
+typedef struct type_format
+{
+	char letter;
+	int (*function_pointer)(va_list args);
+} format_t;
 
 #endif
