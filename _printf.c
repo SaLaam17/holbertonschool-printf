@@ -15,22 +15,24 @@ int _printf(const char *format, ...)
 	int count = 0;
 	va_list args;
 	int i = 0, j;
-	format_t array[] = {
-	{'c', print_char},
-	{'s', print_string},
-	{'%', print_percent},
-	{'\0', NULL}
+	format_t array[] ={
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'\0', NULL}
 	};
 
+	if (format == NULL)
+	return (-1);
+	
 	va_start(args, format);
 
-	while (format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			j = 0;
-
 			while (array[j].letter != '\0')
 			{
 				if (format[i] == array[j].letter)
