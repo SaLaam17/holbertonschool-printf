@@ -11,6 +11,7 @@
 */
 int _printf(const char *format, ...)
 {
+	int count = 0;
 	va_list args;
 	int i = 0, j;
 	format_t array[] = {
@@ -33,7 +34,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == array[j].letter)
 				{
-					array[j].function_pointer(args);
+					count += array[j].function_pointer(args);
 					break;
 				}
 				j++;
@@ -42,10 +43,11 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[i]);
+			count++;
 		}
 		i++;
 	}
 
 	va_end(args);
-	return (1);
+	return (count);
 }
