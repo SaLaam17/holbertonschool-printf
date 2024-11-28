@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
 * _printf - function that produces output according to a format.
@@ -20,6 +21,9 @@ int _printf(const char *format, ...)
 	{'%', print_percent},
 	{'\0', NULL}
 	};
+
+	if (format == NULL)
+		exit(99);
 
 	va_start(args, format);
 
