@@ -22,7 +22,7 @@ int print_percent(va_list args);
 typedef struct type_format
 {
 	char letter;
-	int (*function_pointer)(va_list args);
+	int (*function_pointer)(va_list);
 } format_t;
 
 #endif
