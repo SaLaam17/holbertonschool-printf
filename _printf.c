@@ -54,13 +54,13 @@ int print_percent(va_list args)
 	_putchar('%');
 	return (1);
 }
- /**
- * _printf - function that produces output according to a format.
- * Description: function that produces output according to a format.
- * @format: A string of characters representing the argument types.
- * Return: The number of characters printed.
- */
 
+/**
+* _printf - function that produces output according to a format.
+* Description: function that produces output according to a format.
+* @format: A string of characters representing the argument types.
+* Return: The number of characters printed.
+*/
 int _printf(const char *format, ...)
 {
 	va_list args;
