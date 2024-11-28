@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/* _printf - function that produces output according to a format.
+/**
+* _printf - function that produces output according to a format.
 * Description: function that produces output according to a format.
 * @format: A string of characters representing the argument types.
 * Return: The number of characters printed.
