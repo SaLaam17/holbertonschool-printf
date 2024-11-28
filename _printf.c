@@ -2,59 +2,17 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
- * print_char - function that print a char
- * @args: A va_list pointing to the character to be printed.
- * Return: the number of characters printed
+* _printf - function that produces output according to a format.
+* Description: function that produces output according to a format.
+* @format: A string of characters representing the argument types.
+* Return: The number of characters printed.
 */
-
-int print_char(va_list args)
-{
-	char letter = va_arg(args, int);
-	_putchar(letter);
-	return (1);
-}
-
-/**
- * print_string - function that print a string
- * @args: A va_list pointing to the string to be printed.
- * Return: the number of characters printed
- * (excluding the null byte used to end output to strings)
-*/
-
-
-int print_string(va_list args)
-{
-	int i;
-	char *str = va_arg(args, char *);
-	if (str == NULL)
-
-	{
-		str = "(NULL)";
-	}
-	 i = 0;
-	while (str[i] != '\0')
-	{
-		_putchar(str[i]);
-		i++;
-	}
-	return (i);
-}
-int print_percent(va_list args)
-{
-	(void)args;
-	_putchar('%');
-	return (1);
-}
- /**
- * _printf - function that prints ...
- * Description:
- * @format: A string of characters representing the argument types.
- */
-
 int _printf(const char *format, ...)
 {
+	int count = 0;
 	va_list args;
 	int i = 0, j;
 	format_t array[] = {
@@ -66,17 +24,18 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-    while (format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			j = 0;
+
 			while (array[j].letter != '\0')
 			{
 				if (format[i] == array[j].letter)
 				{
-					array[j].function_pointer(args);
+					count += array[j].function_pointer(args);
 					break;
 				}
 				j++;
@@ -85,11 +44,11 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[i]);
+			count++;
 		}
 		i++;
 	}
-	
-	va_end(args);
-	return (1);
-}
 
+	va_end(args);
+	return (count);
+}

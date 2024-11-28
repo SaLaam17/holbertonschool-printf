@@ -13,21 +13,16 @@ int print_int(va_list args);
 int print_percent(va_list args);
 
 /**
- * _putchar
- * 
+ * struct type_format - new struct type
+ * @letter: a char representing a data type.
+ * @function_pointer: function pointer to a function that prints
+ * a data type corresponding to letter.
  */
-int _putchar(char c)
+
+typedef struct type_format
 {
-	return(write(1, &c, 1));
-}
-/**
- * format_t - est une structure qui definit un type
- * qui permet
- * de prendre en charge plusieurs types different
- */
-typedef struct type_format {
-    char letter;
-    int (*function_pointer)(va_list args);
-}format_t;
+	char letter;
+	int (*function_pointer)(va_list);
+} format_t;
 
 #endif
