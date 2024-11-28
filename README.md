@@ -1,10 +1,35 @@
-# holbertonschool-printf
-## Description du projet et de la fonction printf
-## La commande de compilation:
+# _printf: Custom printf function
+
+## Description :
+This project implements a simplified version of the standard printf function. The _printf function processes a format string and additional arguments to produce formatted output to standard output (stdout). It supports a limited set of format specifiers and demonstrates the use of function pointers, variadic arguments, and modular code design.
+
+## Conversion specifiers supported:
+%c : Prints a single character.
+%s : Prints a string of characters.
+%% : Prints a percent sign (%).
+%d : Prints an integer.
+%i : Also prints an integer.
+
+## Compilation :
+Use that command line to compile: 
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
-## Les requirements:
-Environnement Ubuntu 20.04 LTS, GCC avec les options: -Wall -Werror -Wextra -pedantic -std=gnu89, git ...).
-Des exemples d'utilisation de la fonction _printf (code snippets / screenshots…) avec le résultat en STDOUT
-## Man page
-## Testing (comment ? + exemples) + valgrind pour les failles mémoire…
-## Flowchart
+
+## Requirements :
+All the files were compiled on Ubuntu 20.04 LTS using gcc.
+Files use the Betty style. They were checked using 
+betty-style.pl and betty-doc.pl
+
+## Examples :
+_printf("Character: %c\n", 'H');
+output : Character: H
+
+_printf("String: %s\n", "Hello, World!");
+output : String: Hello, World!
+
+_printf("Percent sign: %%\n");
+output : Percent sign: %
+## Man page :
+
+## Testing :
+
+## Flowchart :
