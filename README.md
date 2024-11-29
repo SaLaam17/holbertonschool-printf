@@ -28,8 +28,10 @@ output : String: Hello, World!
 
 _printf("Percent sign: %%\n");
 output : Percent sign: %
-## Man page :
-
-## Testing :
 
 ## Flowchart :
+
+<img width="463" alt="Capture d’écran 2024-11-29 à 14 33 47" src="https://github.com/user-attachments/assets/41bf4b28-6aa0-4d1f-9923-782e01b88a76">
+
+
+writted by Vitushan and Said.
